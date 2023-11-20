@@ -2,7 +2,7 @@
 'use client'
 import React, { useState } from 'react';
 
-const Home = () => {
+const Btc = () => {
   const [address, setAddress] = useState('');
   const [addressInfo, setAddressInfo] = useState([]);
 
@@ -69,4 +69,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Btc;
