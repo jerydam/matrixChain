@@ -7,20 +7,21 @@ const BaseScan = ({ address }) => {
   const [details, setDetails] = useState({});
   const [transactions, setTransactions] = useState([]);
   const [loading, setLoading] = useState(true);
-  const API_KEY = "YOUR_BASE_API_KEY"; // Replace with your Base API key
+  const API_KEY = "31CV59G12PMT76YMRDUZM2ZZX187DIRBRN"; // Replace with your Base API key
 
   useEffect(() => {
     const fetchAddressDetails = async () => {
       try {
         // Fetch address details
         const addressDetailsResponse = await axios.get(
-          `https://api.base.io/api?module=account&action=balance&address=${address}&tag=latest&apikey=${API_KEY}`
+          `https://api.basescan.org/api?module=account&action=balance&address=${address}&tag=latest&apikey=${API_KEY}`
         );
 
         // Fetch transaction history
         const transactionHistoryResponse = await axios.get(
-          `https://api.base.io/api?module=account&action=txlist&address=${address}&startblock=0&endblock=99999999&sort=desc&apikey=${API_KEY}`
+          `https://api.basescan.org/api?module=account&action=txlist&address=${address}&startblock=0&endblock=99999999&sort=desc&apikey=${API_KEY}`
         );
+        console.log('Transaction History Response:', transactionHistoryResponse.data);
 
         setDetails(addressDetailsResponse.data.result);
 

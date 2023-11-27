@@ -16,11 +16,13 @@ const Etherscan = ({ address }) => {
         const addressDetailsResponse = await axios.get(
           `https://api.etherscan.io/api?module=account&action=balance&address=${address}&tag=latest&apikey=${API_KEY}`
         );
+        console.log('Address Details Response:', addressDetailsResponse.data);
 
         // Fetch transaction history
         const transactionHistoryResponse = await axios.get(
           `https://api.etherscan.io/api?module=account&action=txlist&address=${address}&startblock=0&endblock=99999999&sort=desc&apikey=${API_KEY}`
         );
+        console.log('Transaction History Response:', transactionHistoryResponse.data);
 
         setDetails(addressDetailsResponse.data.result);
 

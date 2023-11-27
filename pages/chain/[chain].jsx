@@ -6,7 +6,7 @@ import BitcoinScan from '../bitcoin';
 import TelosScan from '../telo';
 import ArbitScan from '../arbit';
 import CelosScan from '../celo';
-import Solana from '../solana';
+import SolanaScan from '../solana';
 import PolygonScan from '../polygon';
 import Binance from '../binance';
 import BaseScan from '../base';
@@ -24,7 +24,7 @@ const ChainPage = () => {
     bitcoin: <BaseScan chain={chain} />,
     ethereum: <Binance chain={chain} />,
     bitcoin: <PolygonScan chain={chain} />,
-    ethereum: <Solana chain={chain} />,
+    ethereum: <SolanaScan chain={chain} />,
     bitcoin: <BitcoinScan chain={chain} />,
     // Add components for other chains as needed
   };

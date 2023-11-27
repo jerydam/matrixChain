@@ -7,19 +7,19 @@ const CelosScan = ({ address }) => {
   const [details, setDetails] = useState({});
   const [transactions, setTransactions] = useState([]);
   const [loading, setLoading] = useState(true);
-  const API_KEY = "YOUR_CELO_API_KEY"; // Replace with your Celo API key
+  const API_KEY = "MEWS4FMA9GVYEJXDGWQ5INUTXBU77IAVSH"; // Replace with your Celo API key
 
   useEffect(() => {
     const fetchAddressDetails = async () => {
       try {
         // Fetch address details
         const addressDetailsResponse = await axios.get(
-          `https://api.celo.io/api?module=account&action=balance&address=${address}&tag=latest&apikey=${API_KEY}`
+          `https://api.celoscan.io/api?module=account&action=balance&address=${address}&tag=latest&apikey=${API_KEY}`
         );
-
+        console.log('Transaction History Response:', transactionHistoryResponse.data);
         // Fetch transaction history
         const transactionHistoryResponse = await axios.get(
-          `https://api.celo.io/api?module=account&action=txlist&address=${address}&startblock=0&endblock=99999999&sort=desc&apikey=${API_KEY}`
+          `https://api.celoscan.io/api?module=account&action=txlist&address=${address}&startblock=0&endblock=99999999&sort=desc&apikey=${API_KEY}`
         );
 
         setDetails(addressDetailsResponse.data.result);

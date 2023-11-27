@@ -5,7 +5,7 @@ import BitcoinScan from '@/pages/bitcoin';
 import TelosScan from '@/pages/telo';
 import ArbitScan from '@/pages/arbit';
 import CelosScan from '@/pages/celo';
-import Solana from '@/pages/solana';
+import SolanaScan from '@/pages/solana';
 import PolygonScan from '@/pages/polygon';
 import Binance from '@/pages/binance';
 import BaseScan from '@/pages/base';
