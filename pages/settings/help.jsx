@@ -1,16 +1,9 @@
-import Navbar from '@/components/nav'
-import Sidebar from '@/components/sidebar'
 import React from 'react'
 
-const help = () => {
+const Help = () => {
   return (
-    <div className='flex'>
-      <Sidebar/>
-      <div className='w-full'>
-      <Navbar/>
-    </div>
-    </div>
+    <div>Help</div>
   )
 }
 
-export default help
+export default Help

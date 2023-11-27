@@ -14,7 +14,7 @@ const TelosScan = ({ address }) => {
       try {
         // Fetch address details
         const addressDetailsResponse = await axios.get(
-          `https://api.telos.io/api?module=account&action=balance&address=${address}&tag=latest&apikey=${API_KEY}`
+          `https://api.teloscan.io/api?module=account&action=balance&address=${address}&tag=latest&apikey=${API_KEY}`
         );
         console.log('Transaction History Response:', transactionHistoryResponse.data);
         // Fetch transaction history
