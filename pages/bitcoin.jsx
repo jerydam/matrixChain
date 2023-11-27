@@ -13,7 +13,7 @@ const BitcoinScan = ({ address }) => {
       try {
         // Fetch transaction history
         const transactionHistoryResponse = await axios.get(
-          `https://api.blockchair.com/bitcoin/dashboards/address/${address}?key=${API_KEY}`
+          `https://api.blockchair.com/bitcoin/dashboards/address/${address}?`
         );
 
         // Check if transactions is an array before setting state

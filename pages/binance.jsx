@@ -7,7 +7,7 @@ const Binance = ({ address }) => {
   const [details, setDetails] = useState({});
   const [transactions, setTransactions] = useState([]);
   const [loading, setLoading] = useState(true);
-  const API_KEY = "YOUR_BSC_API_KEY"; // Replace with your BSC API key
+  const API_KEY = "AH5CIDAZNPSG2JTSEN9DE1BG4VN9Y7JM5H"; // Replace with your BSC API key
 
   useEffect(() => {
     const fetchAddressDetails = async () => {

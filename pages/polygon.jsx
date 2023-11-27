@@ -7,7 +7,7 @@ const PolygonScan = ({ address }) => {
   const [details, setDetails] = useState({});
   const [transactions, setTransactions] = useState([]);
   const [loading, setLoading] = useState(true);
-  const API_KEY = "YOUR_POLYGON_API_KEY"; // Replace with your Polygon API key
+  const API_KEY = "73MDWVZ4CT2VUA51Y1A72JNRPVX8QQHWM5Y"; // Replace with your Polygon API key
 
   useEffect(() => {
     const fetchAddressDetails = async () => {
@@ -16,6 +16,7 @@ const PolygonScan = ({ address }) => {
         const addressDetailsResponse = await axios.get(
           `https://api.polygonscan.com/api?module=account&action=balance&address=${address}&tag=latest&apikey=${API_KEY}`
         );
+        console.log('Transaction History Response:', transactionHistoryResponse.data);
 
         // Fetch transaction history
         const transactionHistoryResponse = await axios.get(

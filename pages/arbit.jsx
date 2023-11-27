@@ -7,19 +7,20 @@ const ArbitScan = ({ address }) => {
   const [details, setDetails] = useState({});
   const [transactions, setTransactions] = useState([]);
   const [loading, setLoading] = useState(true);
-  const API_KEY = "YOUR_BSC_API_KEY"; // Replace with your BSC API key
+  const API_KEY = "UYWAGIYHQ1EQW1UIT523RTPWFYYFD3WTQ5"; // Replace with your BSC API key
 
   useEffect(() => {
     const fetchAddressDetails = async () => {
         try {
             // Fetch address details
             const addressDetailsResponse = await axios.get(
-              `https://api.arbitrum.io/api?module=account&action=balance&address=${address}&tag=latest&apikey=${API_KEY}`
+              `https://api.arbitscan.io/api?module=account&action=balance&address=${address}&tag=latest&apikey=${API_KEY}`
             );
-    
+            console.log('Transaction History Response:', transactionHistoryResponse.data);
+
             // Fetch transaction history
             const transactionHistoryResponse = await axios.get(
-              `https://api.arbitrum.io/api?module=account&action=txlist&address=${address}&startblock=0&endblock=99999999&sort=desc&apikey=${API_KEY}`
+              `https://api.arbitscan.io/api?module=account&action=txlist&address=${address}&startblock=0&endblock=99999999&sort=desc&apikey=${API_KEY}`
             );
     
             setDetails(addressDetailsResponse.data.result);
@@ -43,7 +44,7 @@ const ArbitScan = ({ address }) => {
 
   return (
     <div className="max-w-4xl mx-auto p-4 bg-white shadow-md rounded-md">
-      <h2 className="text-2xl font-bold mb-4">BSC Details for {address}</h2>
+      <h2 className="text-2xl font-bold mb-4">Arbitrum Details for {address}</h2>
       {loading ? (
         <p>Loading...</p>
       ) : (
